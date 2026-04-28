@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Modern Munch Caterers | Premium Mobile Catering in T&T</title>
+    <meta name="description" content="Elevate your event with premium mobile catering carts in Trinidad & Tobago. We specialize in Mini Pancake Carts, Charcuterie Boards, Candy Carts, and Fruit Bars.">
+    <meta name="keywords" content="catering trinidad, mobile food cart, pancake cart trinidad, charcuterie board trinidad, event catering tobago, baby shower catering, wedding catering t&t, modern munch">
+    <meta name="author" content="The Modern Munch Caterers">
+    <meta property="og:title" content="The Modern Munch Caterers">
+    <meta property="og:description" content="Premium mobile catering carts for every occasion in Trinidad & Tobago.">
+    <meta property="og:image" content="images/logo.jpg">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://themodernmunch.com">
+    <link rel="icon" href="images/logo.jpg" type="image/jpeg">
+    
+    <!-- Preload critical fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Space+Grotesk:wght@500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CateringBusiness",
+      "name": "The Modern Munch Caterers",
+      "description": "Premium mobile catering carts for every occasion in Trinidad & Tobago. Specializing in Mini Pancake Carts, Charcuterie Boards, Candy Carts, and Fruit Bars.",
+      "url": "https://themodernmunch.com",
+      "telephone": "+18683947093",
+      "email": "modernmunchcaterers@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "TT",
+        "addressRegion": "Trinidad and Tobago"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Trinidad and Tobago"
+      },
+      "priceRange": "$$",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "reviewCount": "200"
+      },
+      "sameAs": ["https://instagram.com/themodernmunch.tt"]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How far in advance should I book?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We recommend booking at least 2-3 weeks in advance to secure your date, especially during peak season (November – January). Last-minute bookings may be available — just message us!"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you deliver island-wide?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! We service all areas across Trinidad. Tobago bookings are available for select dates — contact us for availability and any additional travel fees."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I customize my cart setup?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely! Every cart is styled to match your event's theme, color palette, and aesthetic. We work closely with you or your event planner to ensure everything is picture-perfect."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many guests can one cart serve?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Each cart comfortably serves 50-150 guests depending on the type. For larger events, we can set up multiple carts to create a full catering experience."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is included in the price?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our packages include cart setup & breakdown, all food and supplies, a dedicated attendant, and themed styling. We bring everything — you just enjoy the party!"
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+
+    <!-- Film Grain Overlay -->
+    <div class="grain-overlay"></div>
+
+    <!-- Loading Screen -->
+    <div class="loader">
+        <div class="loader-logo"><img src="images/logo.jpg?v=2" alt="The Modern Munch" class="loader-logo-img"></div>
+        <div class="loader-progress-container">
+            <div class="loader-progress"></div>
+        </div>
+        <div class="loader-percent">0%</div>
+    </div>
+
+    <!-- Custom Cursor (Desktop) -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+    <!-- Navigation -->
+    <header class="navbar">
+        <a href="#home" class="nav-logo"><img src="images/logo.jpg?v=2" alt="The Modern Munch" class="nav-logo-img" fetchpriority="high"></a>
+        <div class="nav-links">
+            <a href="#services">Our Carts</a>
+            <a href="#experience">Experience</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#about">About</a>
+        </div>
+        <div class="nav-actions">
+            <a href="#book" class="btn btn-primary nav-book-btn" style="padding: 10px 24px;">Book Now</a>
+            <button class="mobile-menu-btn">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-inner">
+            <a href="#services" class="mobile-link">Our Carts</a>
+            <a href="#experience" class="mobile-link">Experience</a>
+            <a href="#gallery" class="mobile-link">Gallery</a>
+            <a href="#about" class="mobile-link">About</a>
+        </div>
+    </div>
+
+    <main>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 class="hero-title">Elevate Your Event</h1>
+            <p class="hero-subtitle">Premium mobile catering carts for every occasion in Trinidad & Tobago.</p>
+            <div>
+                <a href="#book" class="btn btn-primary">Book Your Cart</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="images/team-1.jpg?v=2" alt="Event Catering" class="hero-img-bg slide active" fetchpriority="high">
+            <img src="images/team-2.jpg?v=2" alt="Fruit Station" class="hero-img-bg slide" loading="lazy" decoding="async">
+            <img src="images/team-3.jpg?v=2" alt="Catering Display" class="hero-img-bg slide" loading="lazy" decoding="async">
+            <img src="images/team-4.jpg?v=2" alt="The Founders" class="hero-img-bg slide" loading="lazy" decoding="async">
+        </div>
+    </section>
+
+    <!-- Wave Divider -->
+    <div class="wave-divider">
+        <svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#FFFFFF"/></svg>
+    </div>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="section-title-wrap">
+            <h2 class="section-title">Our Carts</h2>
+            <p class="section-subtitle">Curated experiences for your guests</p>
+        </div>
+        
+        <div class="services-carousel" id="services-carousel">
+            <div class="carousel-track">
+                <!-- Original Cards -->
+                <article class="service-card">
+                    <div class="service-img-wrap">
+                        <img src="images/pancake-cart.png" alt="Mini Pancake Cart" class="service-img" loading="lazy" decoding="async">
+                    </div>
+                    <h3 class="service-title">Mini Pancake Cart</h3>
+                    <p class="service-desc">Fluffy mini Dutch pancakes (poffertjes) made fresh at your event.</p>
+                    <ul class="service-features">
+                        <li>Customizable toppings bar</li>
+                        <li>Interactive live cooking experience</li>
+                        <li>Perfect for brunches & baby showers</li>
+                    </ul>
+                </article>
+
+                <article class="service-card">
+                    <div class="service-img-wrap">
+                        <img src="images/charcuterie-board.png" alt="Charcuterie Cart" class="service-img" loading="lazy" decoding="async">
+                    </div>
+                    <h3 class="service-title">Charcuterie Cart</h3>
+                    <p class="service-desc">Artisan cheese & meat boards with seasonal fruit pairings.</p>
+                    <ul class="service-features">
+                        <li>Premium imported cheeses</li>
+                        <li>Live assembly presentation</li>
+                        <li>Perfect for cocktail hours & weddings</li>
+                    </ul>
+                </article>
+
+                <article class="service-card">
+                    <div class="service-img-wrap">
+                        <img src="images/candy-cart.png" alt="Snack + Candy Cart" class="service-img" loading="lazy" decoding="async">
+                    </div>
+                    <h3 class="service-title">Snack + Candy Cart</h3>
+                    <p class="service-desc">Curated candy & snack display on a pristine vintage cart.</p>
+                    <ul class="service-features">
+                        <li>Eye-catching apothecary jars</li>
+                        <li>Custom packaging available</li>
+                        <li>Perfect for birthdays & corporate events</li>
+                    </ul>
+                </article>
+
+                <article class="service-card">
+                    <div class="service-img-wrap">
+                        <img src="images/fruit-bar.png" alt="Fruit Bar" class="service-img" loading="lazy" decoding="async">
+                    </div>
+                    <h3 class="service-title">Fruit Bar</h3>
+                    <p class="service-desc">Vibrant tropical fruit displays cascading on marble.</p>
+                    <ul class="service-features">
+                        <li>Chocolate fondue options</li>
+                        <li>Fresh local & imported fruits</li>
+                        <li>Perfect for outdoor fetes</li>
+                    </ul>
+                </article>
+
+                <!-- Duplicated Cards for seamless loop -->
+                <article class="service-card" aria-hidden="true">
+                    <div class="service-img-wrap">
+                        <img src="images/pancake-cart.png" alt="" class="service-img" loading="lazy" decoding="async">
+                    </div>
+                    <h3 class="service-title">Mini Pancake Cart</h3>
+                    <p class="service-desc">Fluffy mini Dutch pancakes (poffertjes) made fresh at your event.</p>
+                    <ul class="service-features">
+                        <li>Customizable toppings bar</li>
+                        <li>Interactive live cooking experience</li>
+                        <li>Perfect for brunches & baby showers</li>
+                    </ul>
+                </article>
+
+                <article class="service-card" aria-hidden="true">
+                    <div class="service-img-wrap">
+                        <img src="images/charcuterie-board.png" alt="" class="service-img" loading="lazy" decoding="async">
+                    </div>
+                    <h3 class="service-title">Charcuterie Cart</h3>
+                    <p class="service-desc">Artisan cheese & meat boards with seasonal fruit pairings.</p>
+                    <ul class="service-features">
+                        <li>Premium imported cheeses</li>
+                        <li>Live assembly presentation</li>
+                        <li>Perfect for cocktail hours & weddings</li>
+                    </ul>
+                </article>
+
+                <article class="service-card" aria-hidden="true">
+                    <div class="service-img-wrap">
+                        <img src="images/candy-cart.png" alt="" class="service-img" loading="lazy" decoding="async">
+                    </div>
+                    <h3 class="service-title">Snack + Candy Cart</h3>
+                    <p class="service-desc">Curated candy & snack display on a pristine vintage cart.</p>
+                    <ul class="service-features">
+                        <li>Eye-catching apothecary jars</li>
+                        <li>Custom packaging available</li>
+                        <li>Perfect for birthdays & corporate events</li>
+                    </ul>
+                </article>
+
+                <article class="service-card" aria-hidden="true">
+                    <div class="service-img-wrap">
+                        <img src="images/fruit-bar.png" alt="" class="service-img" loading="lazy" decoding="async">
+                    </div>
+                    <h3 class="service-title">Fruit Bar</h3>
+                    <p class="service-desc">Vibrant tropical fruit displays cascading on marble.</p>
+                    <ul class="service-features">
+                        <li>Chocolate fondue options</li>
+                        <li>Fresh local & imported fruits</li>
+                        <li>Perfect for outdoor fetes</li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <h2 class="section-title">How It Works</h2>
+        <p class="section-subtitle">Three simple steps to an unforgettable event</p>
+
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-number">01</div>
+                <div class="step-icon"><i data-lucide="message-circle"></i></div>
+                <h3 class="step-title">Choose Your Cart</h3>
+                <p class="step-desc">Browse our carts above and message us on WhatsApp with your pick and event details.</p>
+            </div>
+            <div class="step-connector"><i data-lucide="arrow-right"></i></div>
+            <div class="step-card">
+                <div class="step-number">02</div>
+                <div class="step-icon"><i data-lucide="calendar-check"></i></div>
+                <h3 class="step-title">Pick Your Date</h3>
+                <p class="step-desc">We'll confirm availability, discuss your theme and customizations, and lock in your booking.</p>
+            </div>
+            <div class="step-connector"><i data-lucide="arrow-right"></i></div>
+            <div class="step-card">
+                <div class="step-number">03</div>
+                <div class="step-icon"><i data-lucide="party-popper"></i></div>
+                <h3 class="step-title">We Show Up & Wow</h3>
+                <p class="step-desc">Our team arrives early, sets up your themed cart, and handles everything. You just enjoy!</p>
+            </div>
+        </div>
+    </section>
+    <!-- Wave Divider -->
+    <div class="wave-divider wave-flip">
+        <svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,40 C360,0 1080,80 1440,40 L1440,80 L0,80 Z" fill="#FFF8F0"/></svg>
+    </div>
+
+    <!-- Experience Section -->
+    <section class="experience" id="experience">
+        <h2 class="section-title">The Difference</h2>
+        <p class="section-subtitle">Why choose Modern Munch</p>
+
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number" data-target="200">0</div>
+                <div class="stat-label">Events Catered</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-target="500">0</div>
+                <div class="stat-label">Happy Clients</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-target="4">0</div>
+                <div class="stat-label">Cart Options</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-target="3">0</div>
+                <div class="stat-label">Years of Service</div>
+            </div>
+        </div>
+
+        <div class="pillars-grid">
+            <div class="pillar-card">
+                <i data-lucide="palette" class="pillar-icon"></i>
+                <h3 class="pillar-title">Custom Setups</h3>
+                <p>Every cart is styled to match your event's theme and color palette.</p>
+            </div>
+            <div class="pillar-card">
+                <i data-lucide="flame" class="pillar-icon"></i>
+                <h3 class="pillar-title">Live Experience</h3>
+                <p>Watch your food prepared fresh, right before your eyes.</p>
+            </div>
+            <div class="pillar-card">
+                <i data-lucide="gem" class="pillar-icon"></i>
+                <h3 class="pillar-title">Premium Presentation</h3>
+                <p>Instagram-worthy displays that become your event's centerpiece.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <h2 class="section-title">Our Work</h2>
+        <p class="section-subtitle">Moments we've created</p>
+
+        <div class="gallery-grid">
+            <div class="gallery-item" data-speed="0.8">
+                <img src="images/gallery-1.png" alt="Baby Shower Catering Setup" class="gallery-img" loading="lazy" decoding="async">
+                <div class="gallery-overlay">
+                    <span class="gallery-label">Baby Showers</span>
+                </div>
+            </div>
+            <div class="gallery-item" data-speed="1.2">
+                <img src="images/gallery-2.png" alt="Wedding Charcuterie Station" class="gallery-img" loading="lazy" decoding="async">
+                <div class="gallery-overlay">
+                    <span class="gallery-label">Weddings</span>
+                </div>
+            </div>
+            <div class="gallery-item" data-speed="0.9">
+                <img src="images/gallery-3.png" alt="Corporate Event Food Display" class="gallery-img" loading="lazy" decoding="async">
+                <div class="gallery-overlay">
+                    <span class="gallery-label">Corporate</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Feed Section -->
+    <section class="ig-feed">
+        <h2 class="section-title">Follow the Flavor</h2>
+        <p class="section-subtitle">@themodernmunch.tt on Instagram</p>
+
+        <div class="ig-grid">
+            <a href="https://instagram.com/themodernmunch.tt" target="_blank" rel="noopener noreferrer" class="ig-item">
+                <img src="images/team-1.jpg" alt="Modern Munch at event" class="ig-img" loading="lazy" decoding="async">
+                <div class="ig-overlay"><i data-lucide="instagram"></i></div>
+            </a>
+            <a href="https://instagram.com/themodernmunch.tt" target="_blank" rel="noopener noreferrer" class="ig-item">
+                <img src="images/gallery-1.png" alt="Baby shower setup" class="ig-img" loading="lazy" decoding="async">
+                <div class="ig-overlay"><i data-lucide="instagram"></i></div>
+            </a>
+            <a href="https://instagram.com/themodernmunch.tt" target="_blank" rel="noopener noreferrer" class="ig-item">
+                <img src="images/team-2.jpg" alt="Catering team in action" class="ig-img" loading="lazy" decoding="async">
+                <div class="ig-overlay"><i data-lucide="instagram"></i></div>
+            </a>
+            <a href="https://instagram.com/themodernmunch.tt" target="_blank" rel="noopener noreferrer" class="ig-item">
+                <img src="images/gallery-2.png" alt="Wedding charcuterie" class="ig-img" loading="lazy" decoding="async">
+                <div class="ig-overlay"><i data-lucide="instagram"></i></div>
+            </a>
+            <a href="https://instagram.com/themodernmunch.tt" target="_blank" rel="noopener noreferrer" class="ig-item">
+                <img src="images/team-3.jpg" alt="Pancake cart preparation" class="ig-img" loading="lazy" decoding="async">
+                <div class="ig-overlay"><i data-lucide="instagram"></i></div>
+            </a>
+            <a href="https://instagram.com/themodernmunch.tt" target="_blank" rel="noopener noreferrer" class="ig-item">
+                <img src="images/gallery-3.png" alt="Corporate event" class="ig-img" loading="lazy" decoding="async">
+                <div class="ig-overlay"><i data-lucide="instagram"></i></div>
+            </a>
+        </div>
+
+        <div style="text-align: center; margin-top: 48px;">
+            <a href="https://instagram.com/themodernmunch.tt" target="_blank" rel="noopener noreferrer" class="btn btn-primary magnetic-btn" style="background-color: transparent; color: var(--clr-black); border: 2px solid var(--clr-black);">
+                <i data-lucide="instagram" style="width: 20px; height: 20px; margin-right: 8px;"></i> Follow @themodernmunch.tt
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-img-col">
+            <div class="about-img-wrap">
+                <img src="images/team-4.jpg?v=2" alt="The Founders of Modern Munch" class="about-img" loading="lazy" decoding="async"> 
+            </div>
+        </div>
+        <div class="about-text-col">
+            <h2 class="about-title">Meet the Team</h2>
+            <p class="section-subtitle" style="text-align: left; margin-bottom: 24px;">Passionate about premium service</p>
+            <p class="about-desc">We started The Modern Munch Caterers with a simple vision: to bring interactive, beautifully styled food experiences to events across Trinidad & Tobago.</p>
+            <p class="about-desc">From our signature Mini Pancake Cart to our luxurious Charcuterie spreads, we obsess over the details so you can enjoy your party.</p>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2 class="section-title">Client Love</h2>
+        <p class="section-subtitle">What they say</p>
+
+        <div class="testim-carousel">
+            <div class="testim-card active">
+                <div class="stars">★★★★★</div>
+                <p class="quote-text">"The pancake cart was the absolute highlight of my baby shower. The setup was gorgeous and the team was so professional!"</p>
+                <div class="client-name">Sarah M.</div>
+            </div>
+            <div class="testim-card">
+                <div class="stars">★★★★★</div>
+                <p class="quote-text">"Our corporate mixer went to the next level with the Charcuterie cart. Highly recommend Modern Munch for any event."</p>
+                <div class="client-name">David T.</div>
+            </div>
+            <div class="testim-card">
+                <div class="stars">★★★★★</div>
+                <p class="quote-text">"The candy cart matched my daughter's birthday theme perfectly. The attention to detail is unmatched."</p>
+                <div class="client-name">Alicia P.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <h2 class="section-title">Common Questions</h2>
+        <p class="section-subtitle">Everything you need to know</p>
+
+        <div class="faq-list">
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>How far in advance should I book?</span>
+                    <i data-lucide="plus" class="faq-icon"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>We recommend booking at least 2–3 weeks in advance to secure your date, especially during peak season (November – January). Last-minute bookings may be available — just message us!</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Do you deliver island-wide?</span>
+                    <i data-lucide="plus" class="faq-icon"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes! We service all areas across Trinidad. Tobago bookings are available for select dates — contact us for availability and any additional travel fees.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Can I customize my cart setup?</span>
+                    <i data-lucide="plus" class="faq-icon"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Absolutely! Every cart is styled to match your event's theme, color palette, and aesthetic. We work closely with you or your event planner to ensure everything is picture-perfect.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>How many guests can one cart serve?</span>
+                    <i data-lucide="plus" class="faq-icon"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Each cart comfortably serves 50–150 guests depending on the type. For larger events, we can set up multiple carts to create a full catering experience.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>What is included in the price?</span>
+                    <i data-lucide="plus" class="faq-icon"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Our packages include cart setup & breakdown, all food and supplies, a dedicated attendant, and themed styling. We bring everything — you just enjoy the party!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" id="book">
+        <h2 class="cta-title">Let's Make Your Event Unforgettable</h2>
+        <p class="cta-desc">Choose your cart · Pick a date · We handle the rest</p>
+        <div class="cta-buttons">
+            <a href="https://wa.me/18683947093?text=Hi!%20I'd%20like%20to%20book%20a%20cart%20for%20my%20event." target="_blank" rel="noopener noreferrer" class="btn btn-primary magnetic-btn">📲 Book via WhatsApp</a>
+            <a href="mailto:modernmunchcaterers@gmail.com" class="btn btn-ghost magnetic-btn">✉️ Email Us</a>
+        </div>
+    </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <a href="#home" class="footer-logo"><img src="images/logo.jpg?v=2" alt="The Modern Munch" class="footer-logo-img"></a>
+                <p class="footer-desc">Premium mobile catering carts for every occasion in Trinidad & Tobago.</p>
+                <div class="social-links">
+                    <a href="https://instagram.com/themodernmunch.tt" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram" class="social-icon magnetic-btn">
+                        <i data-lucide="instagram"></i>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h4 class="footer-heading">Services</h4>
+                <ul class="footer-links">
+                    <li><a href="#services">Mini Pancake Cart</a></li>
+                    <li><a href="#services">Charcuterie Cart</a></li>
+                    <li><a href="#services">Snack + Candy Cart</a></li>
+                    <li><a href="#services">Fruit Bar</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-heading">Contact</h4>
+                <ul class="footer-links">
+                    <li>+1 868-394-7093</li>
+                    <li>modernmunchcaterers@gmail.com</li>
+                    <li>Trinidad and Tobago</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 The Modern Munch Caterers. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close"><i data-lucide="x" style="width: 32px; height: 32px;"></i></button>
+        <img src="" alt="Fullscreen Image" class="lightbox-img" id="lightbox-img">
+    </div>
+
+    <!-- Floating WhatsApp Button (Desktop) -->
+    <a href="https://wa.me/18683947093?text=Hi!%20I'd%20like%20to%20book%20a%20cart%20for%20my%20event." target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <svg viewBox="0 0 32 32" width="28" height="28" fill="white"><path d="M16.004 0h-.008C7.174 0 0 7.176 0 16.004c0 3.5 1.128 6.744 3.046 9.378L1.054 31.29l6.118-1.958A15.9 15.9 0 0016.004 32C24.826 32 32 24.826 32 16.004S24.826 0 16.004 0zm9.338 22.616c-.39 1.1-1.932 2.014-3.168 2.282-.846.18-1.95.324-5.67-1.218-4.762-1.972-7.828-6.8-8.066-7.114-.228-.314-1.918-2.554-1.918-4.872s1.214-3.456 1.644-3.928c.43-.472.938-.59 1.252-.59.314 0 .628.004.902.016.29.014.678-.11 1.06.808.39.94 1.33 3.258 1.448 3.494.118.236.196.512.04.826-.158.314-.236.512-.472.786-.236.276-.496.616-.708.826-.236.236-.482.492-.208.964.276.472 1.224 2.018 2.628 3.268 1.808 1.608 3.332 2.106 3.804 2.342.472.236.748.196 1.024-.118.276-.314 1.178-1.374 1.492-1.846.314-.472.628-.392 1.06-.236.432.158 2.75 1.296 3.22 1.532.472.236.786.354.902.55.118.196.118 1.138-.272 2.238z"/></svg>
+    </a>
+
+    <!-- Mobile CTA (Sticky) -->
+    <div class="mobile-cta">
+        <a href="https://wa.me/18683947093?text=Hi!%20I'd%20like%20to%20book%20a%20cart%20for%20my%20event." target="_blank" rel="noopener noreferrer" class="btn btn-primary">Book on WhatsApp</a>
+    </div>
+
+    <script src="script.js" defer></script>
+    <script defer>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
