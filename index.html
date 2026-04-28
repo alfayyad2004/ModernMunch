@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Modern Munch Caterers | Premium Mobile Catering in T&T</title>
+    <title>The Modern Munch | Premium Mobile Catering in T&T</title>
     <meta name="description" content="Elevate your event with premium mobile catering carts in Trinidad & Tobago. We specialize in Mini Pancake Carts, Charcuterie Boards, Candy Carts, and Fruit Bars.">
     <meta name="keywords" content="catering trinidad, mobile food cart, pancake cart trinidad, charcuterie board trinidad, event catering tobago, baby shower catering, wedding catering t&t, modern munch">
-    <meta name="author" content="The Modern Munch Caterers">
-    <meta property="og:title" content="The Modern Munch Caterers">
+    <meta name="author" content="The Modern Munch">
+    <meta property="og:title" content="The Modern Munch">
     <meta property="og:description" content="Premium mobile catering carts for every occasion in Trinidad & Tobago.">
     <meta property="og:image" content="images/logo.jpg">
     <meta property="og:type" content="website">
@@ -29,7 +29,7 @@
     {
       "@context": "https://schema.org",
       "@type": "CateringBusiness",
-      "name": "The Modern Munch Caterers",
+      "name": "The Modern Munch",
       "description": "Premium mobile catering carts for every occasion in Trinidad & Tobago. Specializing in Mini Pancake Carts, Charcuterie Boards, Candy Carts, and Fruit Bars.",
       "url": "https://themodernmunch.com",
       "telephone": "+18683947093",
@@ -298,26 +298,51 @@
         <h2 class="section-title">How It Works</h2>
         <p class="section-subtitle">Three simple steps to an unforgettable event</p>
 
-        <div class="steps-grid">
-            <div class="step-card">
-                <div class="step-number">01</div>
-                <div class="step-icon"><i data-lucide="message-circle"></i></div>
-                <h3 class="step-title">Choose Your Cart</h3>
-                <p class="step-desc">Browse our carts above and message us on WhatsApp with your pick and event details.</p>
-            </div>
-            <div class="step-connector"><i data-lucide="arrow-right"></i></div>
-            <div class="step-card">
-                <div class="step-number">02</div>
-                <div class="step-icon"><i data-lucide="calendar-check"></i></div>
-                <h3 class="step-title">Pick Your Date</h3>
-                <p class="step-desc">We'll confirm availability, discuss your theme and customizations, and lock in your booking.</p>
-            </div>
-            <div class="step-connector"><i data-lucide="arrow-right"></i></div>
-            <div class="step-card">
-                <div class="step-number">03</div>
-                <div class="step-icon"><i data-lucide="party-popper"></i></div>
-                <h3 class="step-title">We Show Up & Wow</h3>
-                <p class="step-desc">Our team arrives early, sets up your themed cart, and handles everything. You just enjoy!</p>
+        <div class="steps-container">
+            <!-- Desktop: Line that connects icons through the gaps between cards -->
+            <svg class="steps-line" viewBox="0 0 900 80" fill="none">
+                <!-- Gentle arcs that dip down in the gaps between cards -->
+                <path class="steps-line-bg" 
+                    d="M 150,40 C 220,40 250,70 310,70 C 370,70 400,40 450,40 C 500,40 530,70 590,70 C 650,70 680,40 750,40" 
+                    stroke="#F5E1D8" stroke-width="2" stroke-linecap="round" fill="none"/>
+                <path class="steps-line-draw" 
+                    d="M 150,40 C 220,40 250,70 310,70 C 370,70 400,40 450,40 C 500,40 530,70 590,70 C 650,70 680,40 750,40" 
+                    stroke="#C8943E" stroke-width="2" stroke-linecap="round" fill="none"/>
+                <!-- Gold dots at start, mid, end -->
+                <circle class="step-dot" cx="150" cy="40" r="5" fill="#C8943E" opacity="0"/>
+                <circle class="step-dot" cx="450" cy="40" r="5" fill="#C8943E" opacity="0"/>
+                <circle class="step-dot" cx="750" cy="40" r="5" fill="#C8943E" opacity="0"/>
+            </svg>
+
+            <!-- Mobile: Vertical line with gentle S-curves -->
+            <svg class="steps-line-vertical" viewBox="0 0 40 500" fill="none">
+                <path class="steps-line-bg" 
+                    d="M 20,30 C 20,60 35,80 35,120 C 35,160 5,200 5,240 C 5,280 35,320 35,360 C 35,400 20,440 20,470" 
+                    stroke="#F5E1D8" stroke-width="2" stroke-linecap="round" fill="none"/>
+                <path class="steps-line-draw-v" 
+                    d="M 20,30 C 20,60 35,80 35,120 C 35,160 5,200 5,240 C 5,280 35,320 35,360 C 35,400 20,440 20,470" 
+                    stroke="#C8943E" stroke-width="2" stroke-linecap="round" fill="none"/>
+            </svg>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">01</div>
+                    <div class="step-icon"><i data-lucide="message-circle"></i></div>
+                    <h3 class="step-title">Choose Your Cart</h3>
+                    <p class="step-desc">Browse our carts above and message us on WhatsApp with your pick and event details.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">02</div>
+                    <div class="step-icon"><i data-lucide="calendar-check"></i></div>
+                    <h3 class="step-title">Pick Your Date</h3>
+                    <p class="step-desc">We'll confirm availability, discuss your theme and customizations, and lock in your booking.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">03</div>
+                    <div class="step-icon"><i data-lucide="party-popper"></i></div>
+                    <h3 class="step-title">We Show Up & Wow</h3>
+                    <p class="step-desc">Our team arrives early, sets up your themed cart, and handles everything. You just enjoy!</p>
+                </div>
             </div>
         </div>
     </section>
@@ -460,7 +485,7 @@
         <div class="about-text-col">
             <h2 class="about-title">Meet the Team</h2>
             <p class="section-subtitle" style="text-align: left; margin-bottom: 24px;">Passionate about premium service</p>
-            <p class="about-desc">We started The Modern Munch Caterers with a simple vision: to bring interactive, beautifully styled food experiences to events across Trinidad & Tobago.</p>
+            <p class="about-desc">We started The Modern Munch with a simple vision: to bring interactive, beautifully styled food experiences to events across Trinidad & Tobago.</p>
             <p class="about-desc">From our signature Mini Pancake Cart to our luxurious Charcuterie spreads, we obsess over the details so you can enjoy your party.</p>
         </div>
     </section>
@@ -600,7 +625,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 The Modern Munch Caterers. All rights reserved.</p>
+            <p>&copy; 2026 The Modern Munch. All rights reserved.</p>
         </div>
     </footer>
 

@@ -363,7 +363,7 @@ document.querySelectorAll('.faq-question').forEach(btn => {
   });
 });
 
-// Animate How It Works Steps
+// Animate How It Works Steps & Line
 gsap.from('.step-card', {
   scrollTrigger: {
     trigger: '.how-it-works',
@@ -372,22 +372,62 @@ gsap.from('.step-card', {
   y: 40,
   opacity: 0,
   duration: 0.8,
-  stagger: 0.2,
+  stagger: 0.25,
   ease: "back.out(1.2)"
 });
 
-gsap.from('.step-connector', {
-  scrollTrigger: {
-    trigger: '.how-it-works',
-    start: "top 75%",
-  },
-  scale: 0,
-  opacity: 0,
-  duration: 0.4,
-  stagger: 0.2,
-  delay: 0.4,
-  ease: "back.out(2)"
-});
+// Animated connecting line draw (desktop)
+const lineDraw = document.querySelector('.steps-line-draw');
+if (lineDraw) {
+  const len = lineDraw.getTotalLength();
+  lineDraw.style.strokeDasharray = len;
+  lineDraw.style.strokeDashoffset = len;
+  
+  gsap.to(lineDraw, {
+    scrollTrigger: {
+      trigger: '.how-it-works',
+      start: "top 70%",
+    },
+    strokeDashoffset: 0,
+    duration: 2.5,
+    delay: 0.3,
+    ease: "power2.inOut"
+  });
+
+  // Pop in the gold dots as the line reaches them
+  gsap.to('.step-dot', {
+    scrollTrigger: {
+      trigger: '.how-it-works',
+      start: "top 70%",
+    },
+    opacity: 1,
+    scale: 1.5,
+    transformOrigin: "center",
+    duration: 0.4,
+    stagger: 0.7,
+    delay: 0.6,
+    ease: "back.out(3)"
+  });
+}
+
+// Vertical line for mobile
+const lineDrawV = document.querySelector('.steps-line-draw-v');
+if (lineDrawV) {
+  const lenV = lineDrawV.getTotalLength();
+  lineDrawV.style.strokeDasharray = lenV;
+  lineDrawV.style.strokeDashoffset = lenV;
+
+  gsap.to(lineDrawV, {
+    scrollTrigger: {
+      trigger: '.how-it-works',
+      start: "top 70%",
+    },
+    strokeDashoffset: 0,
+    duration: 2.5,
+    delay: 0.3,
+    ease: "power2.inOut"
+  });
+}
 
 // Animate Instagram Feed
 gsap.from('.ig-item', {
