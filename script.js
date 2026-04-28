@@ -1,6 +1,15 @@
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
 
+// Scroll Progress Bar
+const scrollProgress = document.getElementById('scroll-progress');
+window.addEventListener('scroll', () => {
+  const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+  const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const progress = (scrollTop / scrollHeight) * 100;
+  scrollProgress.style.width = progress + '%';
+}, { passive: true });
+
 // Custom Cursor
 const cursorDot = document.querySelector('.cursor-dot');
 const cursorOutline = document.querySelector('.cursor-outline');
@@ -36,12 +45,22 @@ if (window.innerWidth > 768) {
 // Loading Animation Sequence
 window.addEventListener('load', () => {
   const tl = gsap.timeline();
+  const loaderPercent = document.querySelector('.loader-percent');
+  const counter = { val: 0 };
 
-  tl.to('.loader-progress', {
+  tl.to(counter, {
+    val: 100,
+    duration: 1.5,
+    ease: 'power3.inOut',
+    onUpdate: () => {
+      loaderPercent.textContent = Math.round(counter.val) + '%';
+    }
+  })
+  .to('.loader-progress', {
     width: '100%',
     duration: 1.5,
     ease: 'power3.inOut'
-  })
+  }, 0) // start at same time as counter
   .to('.loader', {
     yPercent: -100,
     duration: 0.8,
