@@ -1145,15 +1145,19 @@ footer {
     z-index: 0;
   }
   
-  .carousel-track { 
-    animation: none;
+  .services-carousel {
     overflow-x: auto;
+    overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
+    padding-bottom: 32px;
+  }
+  .services-carousel::-webkit-scrollbar { display: none; }
+  .carousel-track { 
+    animation: none;
     padding: 0 24px;
   }
-  .carousel-track::-webkit-scrollbar { display: none; }
   .carousel-track [aria-hidden="true"] { display: none; }
   .service-card { 
     min-width: 85vw; 
